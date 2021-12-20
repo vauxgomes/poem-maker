@@ -3,7 +3,7 @@ const data = {
     questions: [
         {
             qId: 1,
-            header: "Pergunta 1",
+            header: "Verso 1",
             text: "Minha terra tem palmeiras, onde canta",
             options: [
                 { opId: 1, text: "o sabiá", result: "Teste" },
@@ -15,7 +15,7 @@ const data = {
 
         {
             qId: 2,
-            header: "Pergunta 2",
+            header: "Verso 2",
             text: "Nosso céu tem mais estrelas nossas várzeas têm mais",
             options: [
                 { opId: 1, text: "chão", result: "Teste" },
@@ -27,7 +27,7 @@ const data = {
 
         {
             qId: 3,
-            header: "Pergunta 3",
+            header: "Verso 3",
             text: "Em cismar, sozinho, à noite, mais prazer encontro eu",
             options: [
                 { opId: 1, text: "lá", result: "Teste" },
@@ -39,7 +39,7 @@ const data = {
 
         {
             qId: 4,
-            header: "Pergunta 2",
+            header: "Verso 4",
             text: "Minha terra tem primores, que tais não encontro eu ",
             options: [
                 { opId: 1, text: "lá", result: "Teste" },
@@ -51,7 +51,7 @@ const data = {
 
         {
             qId: 5,
-            header: "Pergunta 2",
+            header: "Verso 5",
             text: "Não permita Deus que eu morra, sem que eu volte para ",
             options: [
                 { opId: 1, text: "lá", result: "Teste" },
