@@ -94,6 +94,7 @@ header {
     padding: 0.5rem;
     border-radius: 4px;
     user-select: none;
+    text-transform: capitalize;
 }
 
 .builder .options label:hover,
@@ -102,11 +103,15 @@ header {
 }
 
 .slider {
+    max-width: 80%;
+    margin: 0 auto;
+    
     padding: 0.5rem 0.5rem 1rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 0.5rem;
 }
 

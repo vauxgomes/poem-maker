@@ -1,5 +1,5 @@
 let slideTemplate = `
-{{#sections}}
+{{#questions}}
 	<div class="slide fade">
 		<span class="title">{{ header }}</span>
 		<section>
@@ -13,4 +13,4 @@ let slideTemplate = `
 			</div>
 		</section>
 	</div>
-{{/sections}}`;
+{{/questions}}`;
