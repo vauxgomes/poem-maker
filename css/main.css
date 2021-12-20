@@ -1,0 +1,188 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;500;600;700;800;900&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-weight: 400;
+	font-size: 16px;
+	font-family: 'Roboto Slab', serif;
+}
+
+header {
+	grid-column: 1/3;
+	background-color: red;
+}
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+
+	display: grid;
+	grid-template-columns: 1.5fr 2fr;
+	align-items: start;
+	gap: 1rem;
+}
+
+.builder {
+	margin: 2rem 1rem;
+	padding: 0.5rem;
+	border-radius: 4px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+	display: flex;
+	flex-direction: column;
+	/* gap: 0.75rem; */
+}
+
+.builder .title {
+	display: block;
+	font-size: 18px;
+}
+
+.builder .subtitle {
+	display: block;
+	font-size: 14px;
+	color: #ccc;
+}
+
+.builder p {
+	margin: 1rem 0;
+	padding-left: 0.5rem;
+}
+
+.builder .slide > * {
+	padding: 1rem 0.5rem;
+}
+
+.builder section {
+	border-top: 1px solid #ccc;
+}
+
+.builder .options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.builder .options input[type='radio'] {
+	display: none;
+}
+
+.builder .options label {
+	cursor: pointer;
+	display: inline;
+	padding: 0.5rem;
+	border-radius: 4px;
+}
+
+.builder .options label:hover,
+.builder .options input[type='radio']:checked + label {
+	background-color: #eee;
+}
+
+.slider {
+	padding: 0.5rem 0.5rem 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.slider .dot {
+	display: inline-block;
+
+	width: 10px;
+	height: 10px;
+
+	border-radius: 50%;
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+.slider .dot:hover,
+.slider .dot.active {
+	background-color: #717171;
+}
+
+.slide {
+	display: none;
+}
+
+.content {
+	/* height: 100vh; */
+	padding: 4rem 0;
+	overflow-y: auto;
+	scroll-behavior: smooth;
+}
+
+.poem {
+	width: 100%;
+
+	line-height: 1.8;
+	word-spacing: 1.5;
+	letter-spacing: 1.5;
+
+	z-index: 100;
+}
+
+.poem h3 {
+	color: #777;
+	font-weight: 400;
+	font-size: 19px;
+
+	margin-bottom: 1.5rem;
+}
+
+.poem h4 {
+	color: #ccc;
+	font-weight: 400;
+	font-size: 17px;
+}
+
+.poem .verse {
+	margin-bottom: 2rem;
+	transition: 0.5s all ease;
+}
+
+.poem .verse.active {
+	border-left: 1px dashed #ccc;
+	padding-left: 1rem;
+}
+
+.poem h3,
+.poem .verse span {
+	display: table;
+	background-color: #ffffffaa;
+}
+
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 0.8s;
+}
+
+@-webkit-keyframes fade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
