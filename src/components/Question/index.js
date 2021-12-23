@@ -1,54 +1,56 @@
-import React, { useEffect, useRef } from 'react';
-import { useContext } from 'react/cjs/react.development';
+import React, { useEffect, useRef } from "react";
+import { useContext } from "react/cjs/react.development";
 
-import { StoryContext } from '../../Context/StoryContext';
+import { StoryContext } from "../../Context/StoryContext";
 
-import './style.css';
+import "./style.css";
 
-export default function Question({ question, className }) {
-	const { handleChange } = useContext(StoryContext);
-	const inputRef = useRef(null);
+export default function Question({ question, isActive }) {
+    const { handleChange } = useContext(StoryContext);
+    const inputRef = useRef(null);
 
-	function onChangeAnswer(e) {
-		handleChange(question.id, e.target.value);
-	}
+    function onChangeAnswer(e) {
+        handleChange(question.id, e.target.value);
+    }
 
-	useEffect(() => {
-		if (className.includes('active')) {
-			inputRef.current?.focus();
-		}
-	}, [className]);
+    useEffect(() => {
+        if (isActive) {
+            inputRef.current?.focus();
+        }
+    }, [isActive]);
 
-	return (
-		<div className={`question fade ${className}`}>
-			<p className="title">{question.text}</p>
+    return (
+        <div className={`question fade ${isActive ? "active" : ""}`}>
+            <p className="title">{question.text}</p>
 
-			{question.options?.map((option, idx) => (
-				<div className="answer" key={option.id}>
-					<input
-						type="radio"
-						value={option.value}
-						name={`q-${question.id}`}
-						id={`q-${question.id}-${idx}`}
-						onChange={onChangeAnswer}
-					/>
+            {question.options?.map((option, idx) => (
+                <div className="answer" key={option.id}>
+                    <input
+                        type="radio"
+                        value={option.value}
+                        name={`q-${question.id}`}
+                        id={`q-${question.id}-${idx}`}
+                        onChange={onChangeAnswer}
+                    />
 
-					<label htmlFor={`q-${question.id}-${idx}`}>{option.text}</label>
-				</div>
-			))}
+                    <label htmlFor={`q-${question.id}-${idx}`}>
+                        {option.text}
+                    </label>
+                </div>
+            ))}
 
-			{question.options?.length ? (
-				''
-			) : (
-				<div className="answer">
-					<input
-						type="text"
-						value={question.value}
-						onChange={onChangeAnswer}
-						ref={inputRef}
-					/>
-				</div>
-			)}
-		</div>
-	);
+            {question.options?.length ? (
+                ""
+            ) : (
+                <div className="answer">
+                    <input
+                        type="text"
+                        value={question.value}
+                        onChange={onChangeAnswer}
+                        ref={inputRef}
+                    />
+                </div>
+            )}
+        </div>
+    );
 }

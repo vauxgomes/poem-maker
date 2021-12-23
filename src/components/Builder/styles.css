@@ -1,7 +1,7 @@
 .builder {
 	position: relative;
 
-	/* margin: 2rem 1rem; */
+	margin-bottom: 2rem;
 	border-radius: 4px;
 	background-color: #fff;
 }
@@ -57,9 +57,9 @@
 
 .selector .dot.active,
 .selector .dot.success {
-	outline: 2px solid #777;
+	outline: 2px solid #000;
 }
 
 .selector .dot.success {
-	background-color: #aaa;
+	background-color: #000;
 }

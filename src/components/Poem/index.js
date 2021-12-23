@@ -1,53 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext } from "react";
 
-import './styles.css';
+import { StoryContext } from "../../Context/StoryContext";
+import "./styles.css";
 
-export default function Poem({ story, sex, name }) {
-	const [print, setPrint] = useState(false);
-	const [verses, setVerses] = useState([]);
+export default function Poem() {
+    const { poem } = useContext(StoryContext);
 
-	function handleBuild() {
-		const questions = story.questions;
-		const verses = [];
+    if (!poem) {
+        return <></>;
+    }
 
-		if (questions.some((question) => question.value === '')) {
-			setPrint(false);
-			return;
-		} else {
-			setPrint(true);
-		}
+    return (
+        <div className="poem">
+            <h3>{poem.title}</h3>
 
-		questions.forEach((question) => {
-			if (question.hasOwnProperty('build')) {
-				verses.push(...question?.build(question.value, sex));
+            {poem.verses.map((verse, index) => (
+                <span className="verse" key={index}>
+                    {verse}
+                </span>
+            ))}
 
-				if (question.breakLine) {
-					verses.push('');
-				}
-			}
-		});
-
-		setVerses(verses);
-	}
-
-	return (
-		<>
-			<button onClick={handleBuild}>Gerar</button>
-			{print ? (
-				<div className="poem">
-					<h3>{story.title}</h3>
-
-					{verses.map((verse, index) => (
-						<span className="verse" key={index}>
-							{verse}
-						</span>
-					))}
-
-					<h4>{name}</h4>
-				</div>
-			) : (
-				''
-			)}
-		</>
-	);
+            <h4>{poem.author}</h4>
+        </div>
+    );
 }
