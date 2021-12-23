@@ -1,0 +1,40 @@
+.poem {
+	width: 100%;
+
+	line-height: 1.8;
+	word-spacing: 1.5;
+	letter-spacing: 1.5;
+}
+
+.poem h3 {
+	color: #777;
+	font-weight: 400;
+	font-size: 19px;
+
+	margin-bottom: 1.5rem;
+}
+
+.poem h4 {
+	color: #ccc;
+	font-weight: 400;
+	font-size: 17px;
+
+    margin-top: 1.5rem;
+}
+
+.poem .verse {
+	display: block;
+	transition: 0.5s all ease;
+}
+
+.poem .verse:last-child,
+.poem .verse:empty {
+    background-color: red;
+	margin-bottom: 2rem;
+}
+
+.poem h3,
+.poem h4,
+.poem .verse {
+	background-color: #ffffffaa;
+}

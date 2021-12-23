@@ -1,43 +1,54 @@
-import React from "react";
-import uuid from "react-uuid";
+import React, { useEffect, useRef } from 'react';
+import { useContext } from 'react/cjs/react.development';
 
-import "./style.css";
+import { StoryContext } from '../../Context/StoryContext';
 
-export default function Question({ question, storyId, active, handleChange }) {
-    function onChangeAnswer(e) {
-        if (question.hasOwnProperty("onchange")) {
-            question.onchange(e.target.value);
-            console.log("used", e.target.value);
-        } else {
-            handleChange(storyId, question.id, e.target.value);
-        }
-    }
+import './style.css';
 
-    return (
-        <div className={`question fade ${active ? "active" : ""}`} key={uuid()}>
-            <p className="statement">{question.text}</p>
+export default function Question({ question, className }) {
+	const { handleChange } = useContext(StoryContext);
+	const inputRef = useRef(null);
 
-            {!question.options ? (
-                <div className="answer">
-                    <input key={uuid()} type="text" onChange={onChangeAnswer} />
-                </div>
-            ) : (
-                question.options.map((option) => (
-                    <div className="answer" key={uuid()}>
-                        <input
-                            type="radio"
-                            value={question.value}
-                            name={`s-${storyId}-q-${question.id}`}
-                            id={`s-${storyId}-q-${question.id}-o-${option.id}`}
-                            onChange={onChangeAnswer}
-                        />
+	function onChangeAnswer(e) {
+		handleChange(question.id, e.target.value);
+	}
 
-                        <label htmlFor={`qt-${question.id}-${option.id}`}>
-                            {option.text}
-                        </label>
-                    </div>
-                ))
-            )}
-        </div>
-    );
+	useEffect(() => {
+		if (className.includes('active')) {
+			inputRef.current?.focus();
+		}
+	}, [className]);
+
+	return (
+		<div className={`question fade ${className}`}>
+			<p className="title">{question.text}</p>
+
+			{question.options?.map((option, idx) => (
+				<div className="answer" key={option.id}>
+					<input
+						type="radio"
+						value={option.value}
+						name={`q-${question.id}`}
+						id={`q-${question.id}-${idx}`}
+						onChange={onChangeAnswer}
+					/>
+
+					<label htmlFor={`q-${question.id}-${idx}`}>{option.text}</label>
+				</div>
+			))}
+
+			{question.options?.length ? (
+				''
+			) : (
+				<div className="answer">
+					<input
+						type="text"
+						value={question.value}
+						onChange={onChangeAnswer}
+						ref={inputRef}
+					/>
+				</div>
+			)}
+		</div>
+	);
 }
