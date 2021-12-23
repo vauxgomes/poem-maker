@@ -1,16 +1,19 @@
 let slideTemplate = `
 {{#questions}}
-	<div class="slide fade">
-		<span class="title">{{ header }}</span>
-		<section>
-			<p>{{text}}</p>
+	<section class="slide fade">
+		<p class="title">{{text}}</p>
 
-			<div class="options">
-				{{#options}}
-						<input value="0" type="radio" name="qt-{{qId}}" id="qt-{{qId}}-{{opId}}" />
-						<label for="qt-{{qId}}-{{opId}}">{{text}}</label>
-				{{/options}}
-			</div>
-		</section>
-	</div>
+		<div class="options">
+			{{#options}}
+				<div>
+					<input value="{{value}}" type="radio" name="qt-{{pId}}-{{qId}}" id="qt-{{pId}}-{{qId}}-{{oId}}"/>
+					<label for="qt-{{pId}}-{{qId}}-{{oId}}">{{text}}</label>
+				</div>
+			{{/options}}
+
+			{{^options}}
+				<input type="text" name="qt-{{pId}}-{{qId}}">
+			{{/options}}
+		</div>
+	</section>
 {{/questions}}`;

@@ -1,138 +1,147 @@
+let __SEX__ = '';
+let __AUTHOR__ = '';
+let __INDEX__ = 0;
+let __PATH__ = 0;
+
 // Data
 const data = {
-	questions: [
+	paths: [
 		{
-			qId: 1,
-			header: 'Verso 1',
-			text: 'Minha terra tem palmeiras, onde canta',
-			options: [
-				{ opId: 1, text: 'o sabiá', result: 'Teste' },
-				{ opId: 2, text: 'a garça', result: 'Teste' },
-				{ opId: 3, text: 'o lobo', result: 'Teste' },
-				{ opId: 4, text: 'o papagaio', result: 'Teste' },
-			],
-		},
+			pId: 0,
+			title: 'Minha história inventada',
+			questions: [
+				{
+					qId: 0,
+					text: 'Qual é o seu nome?',
+					setValue: (value) => {
+						__AUTHOR__ = value;
 
-		{
-			qId: 2,
-			header: 'Verso 2',
-			text: 'Nosso céu tem mais estrelas nossas várzeas têm mais',
-			options: [
-				{ opId: 1, text: 'chão', result: 'Teste' },
-				{ opId: 2, text: 'flores', result: 'Teste' },
-				{ opId: 3, text: 'abelhas', result: 'Teste' },
-				{ opId: 4, text: 'palmeiras', result: 'Teste' },
-			],
-		},
-
-		{
-			qId: 3,
-			header: 'Verso 3',
-			text: 'Em cismar, sozinho, à noite, mais prazer encontro eu',
-			options: [
-				{ opId: 1, text: 'lá', result: 'Teste' },
-				{ opId: 2, text: 'cá', result: 'Teste' },
-				{ opId: 3, text: 'aqui', result: 'Teste' },
-				{ opId: 4, text: 'acolá', result: 'Teste' },
-			],
-		},
-
-		{
-			qId: 4,
-			header: 'Verso 4',
-			text: 'Minha terra tem primores, que tais não encontro eu ',
-			options: [
-				{ opId: 1, text: 'lá', result: 'Teste' },
-				{ opId: 2, text: 'cá', result: 'Teste' },
-				{ opId: 3, text: 'aqui', result: 'Teste' },
-				{ opId: 4, text: 'acolá', result: 'Teste' },
-			],
-		},
-
-		{
-			qId: 5,
-			header: 'Verso 5',
-			text: 'Não permita Deus que eu morra, sem que eu volte para ',
-			options: [
-				{ opId: 1, text: 'lá', result: 'Teste' },
-				{ opId: 2, text: 'cá', result: 'Teste' },
-				{ opId: 3, text: 'aqui', result: 'Teste' },
-				{ opId: 4, text: 'acolá', result: 'Teste' },
+						console.log(__AUTHOR__);
+						return [];
+					},
+				},
+				{
+					qId: 1,
+					text: 'Nesta história sobre você, quer que escrevamos?: ',
+					options: [
+						{ oId: 0, text: `Pronomes masculinos`, value: 'M' },
+						{ oId: 1, text: `Pronomes femininos`, value: 'F' },
+					],
+					setValue: (value) => {
+						__AUTHOR__ = value;
+						return [];
+					},
+				},
+				{
+					qId: 2,
+					text: 'Qual super-herói ou super-heroína você seria?',
+					build: (value) => [
+						`Se eu fosse ${sex ? 'um super-herói' : 'uma super-heroína'}`,
+						`Seria ${sex ? 'o' : 'a'} ${value}`,
+					],
+				},
+				{
+					qId: 3,
+					text: 'Qual vilão ou vilã você seria?',
+					build: (value) => [
+						`Mas se fosse ${sex ? 'vilã' : 'vilão'}`,
+						`Seria tipo ${value}`,
+					],
+				},
+				{
+					qId: 4,
+					text: 'Qual conto de fadas surge na sua mente agora?',
+					build: (value) => [
+						`Se eu vivesse um conto de fadas`,
+						`Viveria a história de ${value}`,
+					],
+				},
+				{
+					qId: 5,
+					text: 'Pense num monstro que você temia quando criança, qual seria?',
+					build: (value) => [
+						`E se tem um monstro que eu temi`,
+						`Certamente, foi ${value}`,
+					],
+				},
+				{
+					qId: 6,
+					text: 'E desenhado animado, cite um que lhe marcou',
+					build: (value) => [`Cresci assistindo ${value}`],
+				},
+				{
+					qId: 7,
+					text: 'Uma novela ou série, lembre alguma que foi importante para você.',
+					build: (value) => [`E chorei assistindo ${value}`],
+				},
+				{
+					qId: 8,
+					text: 'Cite um personagem fictício que, a seu ver, é muito estranho.',
+					build: (value) => [`Porque quando sou ${value}`],
+				},
+				{
+					qId: 9,
+					text: 'Cite um personagem com o qual você aprendeu algo importante.',
+					build: (value) => [`Sou tipo ${value}`],
+				},
+				{
+					qId: 10,
+					text: 'Se a história da sua vida fosse um filme, de que gênero seria? Exemplo: ação, drama, comédia, romance...',
+					build: (value) => [
+						`Sabe, minha história, seria um filme de ${value}`,
+					],
+				},
+				{
+					qId: 11,
+					text: 'Agora pense bem. Não tenha pressa nessa pergunta. Se você fosse um personagem inventado, qual nome você teria? Crie um nome de mentira para você.',
+					build: (value) => [
+						` Quando nasci, deram-me um nome`,
+						`Mas se eu pudesse inventar outro`,
+						`Talvez o mais adequado seria ${value}`,
+					],
+				},
 			],
 		},
 	],
-
-	verses: [
-		[
-			'Minha terra tem palmeiras,',
-			'Onde canta o Sabiá;',
-			'As aves, que aqui gorjeiam,',
-			'Não gorjeiam como lá.',
-		],
-		[
-			'Nosso céu tem mais estrelas,',
-			'Nossas várzeas têm mais flores,',
-			'Nossos bosques têm mais vida,',
-			'Nossa vida mais amores.',
-		],
-		[
-			'Em cismar, sozinho, à noite,',
-			'Mais prazer encontro eu lá;',
-			'Minha terra tem palmeiras,',
-			'Onde canta o Sabiá.',
-		],
-		[
-			'Minha terra tem primores,',
-			'Que tais não encontro eu cá;',
-			'Em cismar — sozinho, à noite —',
-			'Mais prazer encontro eu lá;',
-			'Minha terra tem palmeiras,',
-			'Onde canta o Sabiá.',
-		],
-		[
-			'Não permita Deus que eu morra,',
-			'Sem que eu volte para lá;',
-			'Sem que desfrute os primores',
-			'Que não encontro por cá;',
-			"Sem qu'inda aviste as palmeiras,",
-			'Onde canta o Sabiá.',
-		],
-	],
-
-	getVerse: (i) => {
-		return verses[i].split('\n');
-	},
 };
 
-// Shuffle options
-data.questions.forEach((question) => {
-	question.options = shuffle(question.options);
-});
+// function setValue
 
 // Slides Template
 let slides = document.querySelector('.slides');
-slides.innerHTML = Mustache.render(slideTemplate, data);
+slides.innerHTML = Mustache.render(slideTemplate, data.paths[__PATH__]);
 
-// Verses template
-let verses = document.querySelector('.verses');
-verses.innerHTML = Mustache.render(verseTempalte, data);
+// // Verses template
+// let verses = document.querySelector('.verses');
+// verses.innerHTML = Mustache.render(verseTempalte, data);
 
 // Slide actions
-let slider = document.querySelector('.slider');
 document.querySelectorAll('.slide').forEach((slide, index) => {
 	let dot = document.createElement('span');
 	dot.classList.add('dot');
 	dot.addEventListener('click', (e) => showSlides(index));
 
+	let slider = document.querySelector('.slide-selector');
 	slider.append(dot);
 });
 
-document.querySelectorAll('.verse').forEach((verse, index) => {
-	verse.addEventListener('click', (e) => showSlides(index));
+// document.querySelectorAll('.verse').forEach((verse, index) => {
+// 	verse.addEventListener('click', (e) => showSlides(index));
+// });
+
+document.querySelectorAll('input[name^="qt"]').forEach((input) => {
+	input.addEventListener('change', (e) => {
+		const [_, pId, qId] = input.name.split('-').map((i) => parseInt(i));
+		let question = data.paths[pId].questions[qId];
+		question.value = e.target.value;
+
+		if (question.hasOwnProperty('setValue')) {
+			question.setValue(question.value);
+		}
+	});
 });
 
-let slideIndex = 0;
-showSlides(slideIndex);
+showSlides(__INDEX__);
 
 function showSlides(n) {
 	var slides = document.querySelectorAll('.slide');
@@ -140,10 +149,10 @@ function showSlides(n) {
 	var verses = document.querySelectorAll('.verse');
 
 	// Safety
-	if (n >= verses.length) {
+	if (n >= slides.length) {
 		n = 0;
 	} else if (n < 0) {
-		n = verses.length - 1;
+		n = slides.length - 1;
 	}
 
 	slides.forEach((item) => {
@@ -154,42 +163,22 @@ function showSlides(n) {
 		item.classList.remove('active');
 	});
 
-	verses.forEach((item) => {
-		item.classList.remove('active');
-	});
+	// verses.forEach((item) => {
+	// 	item.classList.remove('active');
+	// });
 
 	slides[n].style.display = 'block';
 	dots[n].classList.add('active');
-	verses[n].classList.add('active');
+	// verses[n].classList.add('active');
 
-	slideIndex = n;
+	__INDEX__ = n;
 }
 
 function prevSlide() {
-	showSlides(slideIndex - 1);
+	showSlides(__INDEX__ - 1);
 }
 function nextSlide() {
-	showSlides(slideIndex + 1);
-}
-
-function shuffle(array) {
-	let currentIndex = array.length,
-		randomIndex;
-
-	// While there remain elements to shuffle...
-	while (currentIndex != 0) {
-		// Pick a remaining element...
-		randomIndex = Math.floor(Math.random() * currentIndex);
-		currentIndex--;
-
-		// And swap it with the current element.
-		[array[currentIndex], array[randomIndex]] = [
-			array[randomIndex],
-			array[currentIndex],
-		];
-	}
-
-	return array;
+	showSlides(__INDEX__ + 1);
 }
 
 function createQR() {
