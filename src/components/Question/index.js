@@ -1,16 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import { useContext } from "react/cjs/react.development";
-
-import { StoryContext } from "../../Context/StoryContext";
 
 import "./style.css";
 
-export default function Question({ question, isActive }) {
-    const { handleChange } = useContext(StoryContext);
+export default function Question({ question, isActive, handleChangeAnswer }) {
     const inputRef = useRef(null);
 
     function onChangeAnswer(e) {
-        handleChange(question.id, e.target.value);
+        handleChangeAnswer(question.id, e.target.value);
     }
 
     useEffect(() => {

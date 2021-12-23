@@ -2,10 +2,9 @@ import { useState } from "react";
 import uuid from "react-uuid";
 
 import Builder from "./components/Builder";
-import { StoryContext } from "./Context/StoryContext";
+import Poem from "./components/Poem";
 
 import "./App.css";
-import Poem from "./components/Poem";
 
 function App() {
     const [name, setName] = useState("");
@@ -206,7 +205,7 @@ function App() {
     const [story, setStory] = useState(stories[0]);
     const [poem, setPoem] = useState(null);
 
-    function handleChange(questionId, value) {
+    function handleChangeAnswer(questionId, value) {
         let stories_ = [...stories];
         let storyIndex = stories_.findIndex((story_) => story_.id === story.id);
 
@@ -282,13 +281,15 @@ function App() {
                 </div>
             </header>
 
-            <StoryContext.Provider value={{ poem, story, handleChange }}>
-                <div className="container content">
-                    {/* BUILDER */}
-                    <Builder />
-                    <Poem />
-                </div>
-            </StoryContext.Provider>
+            <div className="container content">
+                {/* BUILDER */}
+                <Builder
+                    story={story}
+                    handleChangeAnswer={handleChangeAnswer}
+                />
+
+                <Poem poem={poem} />
+            </div>
         </div>
     );
 }

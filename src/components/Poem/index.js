@@ -1,11 +1,7 @@
-import React, { useContext } from "react";
-
-import { StoryContext } from "../../Context/StoryContext";
+import React from "react";
 import "./styles.css";
 
-export default function Poem() {
-    const { poem } = useContext(StoryContext);
-
+export default function Poem({ poem }) {
     if (!poem) {
         return <></>;
     }

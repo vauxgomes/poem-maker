@@ -1,14 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
 
 import Question from "../Question";
 
-import { StoryContext } from "../../Context/StoryContext";
 import "./styles.css";
 
-export default function Builder() {
-    const { story } = useContext(StoryContext);
-
+export default function Builder({ story, handleChangeAnswer }) {
     const [index, setIndex] = useState(0);
     const [touchX, setTouchX] = useState(false);
     const sensibility = 20;
@@ -83,6 +80,7 @@ export default function Builder() {
                         question={question}
                         key={question.id}
                         isActive={isQuestionActive(idx)}
+                        handleChangeAnswer={handleChangeAnswer}
                     />
                 ))}
             </div>
