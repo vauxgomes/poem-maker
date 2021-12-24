@@ -7,8 +7,6 @@ import "./styles.css";
 
 export default function Builder({ story, handleChangeAnswer }) {
     const [index, setIndex] = useState(0);
-    const [touchX, setTouchX] = useState(false);
-    const sensibility = 20;
 
     useEffect(() => {
         setIndex(0);
@@ -26,28 +24,8 @@ export default function Builder({ story, handleChangeAnswer }) {
         return idx === index;
     }
 
-    function handleTouchStart(e) {
-        setTouchX(e.touches[0].clientX);
-    }
-
-    function handleTouchEnd(e) {
-        const X = e.changedTouches[0].clientX;
-
-        if (Math.abs(X - touchX) < sensibility) return;
-
-        if (X > touchX) {
-            decreaseIndex();
-        } else {
-            increaseIndex();
-        }
-    }
-
     return (
-        <div
-            className="builder"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
-        >
+        <div className="builder">
             {/* HEADER */}
             <div className="title d-flex align-center justify-content-between">
                 <h2>{story.title}</h2>

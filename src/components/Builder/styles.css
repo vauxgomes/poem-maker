@@ -1,65 +1,70 @@
 .builder {
-	position: relative;
+    position: relative;
 
-	margin-bottom: 2rem;
-	border-radius: 4px;
-	background-color: #fff;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    background-color: #fff;
 }
 
 .builder .title {
-	font-weight: bold;
-	font-size: 22px;
-	margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 1rem;
 }
 
 .prev,
 .next {
-	user-select: none;
-	border-radius: 50%;
-	color: #ccc;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    user-select: none;
+    border-radius: 50%;
+    color: #ccc;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .prev.active,
 .next.active {
-	cursor: pointer;
-	color: #000;
+    cursor: pointer;
+    color: #000;
+}
+
+.prev:active,
+.next:active {
+    color: green;
 }
 
 .selector {
-	max-width: 80%;
-	margin: 0 auto;
+    max-width: 80%;
+    margin: 0 auto;
 
-	padding: 0.5rem 0.5rem 1rem;
+    padding: 0.5rem 0.5rem 1rem;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .selector .dot {
-	display: inline-block;
+    display: inline-block;
 
-	width: 10px;
-	height: 10px;
+    width: 10px;
+    height: 10px;
 
-	border-radius: 16px;
-	background-color: #ccc;
-	cursor: pointer;
-	user-select: none;
+    border-radius: 16px;
+    background-color: #ccc;
+    cursor: pointer;
+    user-select: none;
 }
 
 .selector .dot:hover {
-	background-color: #717171 !important;
+    background-color: #717171 !important;
 }
 
 .selector .dot.active,
 .selector .dot.success {
-	outline: 2px solid #000;
+    outline: 2px solid #000;
 }
 
 .selector .dot.success {
-	background-color: #000;
+    background-color: #000;
 }

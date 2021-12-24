@@ -28,7 +28,7 @@ label {
 }
 
 select {
-    font-size: 16px;
+    font-size: 14px;
     padding: 0.25rem;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -70,6 +70,10 @@ button:active {
 
 .shadow {
     box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+
+.shadow-sm {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 /* ANIMATIONS */
