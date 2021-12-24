@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/poemador/static/css/main.e50e1c75.css",
-    "main.js": "/poemador/static/js/main.38b405e9.js",
+    "main.css": "/poemador/static/css/main.a20ab786.css",
+    "main.js": "/poemador/static/js/main.f8eda271.js",
     "index.html": "/poemador/index.html",
-    "main.e50e1c75.css.map": "/poemador/static/css/main.e50e1c75.css.map",
-    "main.38b405e9.js.map": "/poemador/static/js/main.38b405e9.js.map"
+    "main.a20ab786.css.map": "/poemador/static/css/main.a20ab786.css.map",
+    "main.f8eda271.js.map": "/poemador/static/js/main.f8eda271.js.map"
   },
   "entrypoints": [
-    "static/css/main.e50e1c75.css",
-    "static/js/main.38b405e9.js"
+    "static/css/main.a20ab786.css",
+    "static/js/main.f8eda271.js"
   ]
 }
