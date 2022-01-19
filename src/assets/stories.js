@@ -1,5 +1,88 @@
 export const originals = [
     {
+        id: "0f47a263",
+        title: "Receita de mim",
+        author: "Maria Efigênia",
+        creation: "01-19-2022",
+        questions: [
+            {
+                id: "a697dc6b",
+                text: "Qual é o seu nome?",
+                value: "",
+                onChange: "setName",
+            },
+            {
+                id: "5269568d",
+                text: "Um fenômeno natural que representa você nesse momento?",
+                value: "",
+                build: (value) => [`Se você misturar meio quilo de ${value}`],
+            },
+            {
+                id: "6a734985",
+                text: "Algo que representa uma alegria para você?",
+                value: "",
+                build: (value) => [`Meia dúzia de ${value}`],
+            },
+            {
+                id: "3c1ebde2",
+                text: "Qual sentimento surge ao lembrar do passado?",
+                value: "",
+                build: (value) => [`Duas xícaras de ${value}`],
+            },
+            {
+                id: "a1e0621c",
+                text: "Um defeito seu?",
+                value: "",
+                build: (value) => [`03 colheres de sopa de ${value}`],
+            },
+            {
+                id: "c86f8892",
+                text: "Uma qualidade sua?",
+                value: "",
+                build: (value) => [`04 copos de ${value}`],
+            },
+            {
+                id: "0121492d",
+                text: "Um dos medos que mais te atormenta?",
+                value: "",
+                build: (value) => [`02 litros de ${value}`],
+            },
+            {
+                id: "03939f48",
+                text: "Um valor que é referência para você?",
+                value: "",
+                build: (value) => [`03 pitadas de ${value}`],
+            },
+            {
+                id: "d203ff8b",
+                text: "O que mais lhe cansa?",
+                value: "",
+                build: (value) => [`Bater tudo na ${value}`],
+            },
+            {
+                id: "6512deff",
+                text: "O que mais lhe impede de desistir?",
+                value: "",
+                build: (value) => [`Cozinhar em fogo baixo com ${value}`],
+            },
+            {
+                id: "3ddc6269",
+                text: "O que melhor representa um sonho seu?",
+                value: "",
+                build: (value) => [`E refogar bem em ${value}`],
+            },
+            {
+                id: "f3e6c078",
+                text: "O que representa seu sucesso daqui a 10 anos?",
+                value: "",
+                build: (value) => [
+                    `Talvez assim, seguindo a receita, entenda em imagens como me sinto...`,
+                    `Agora bastar servir numa travessa de ${value}`,
+                ],
+            },
+        ],
+    },
+    {
         id: "b4c36f3-be5-c7de-7a3b-d84640fe0c",
         title: "Minha história inventada",
         questions: [

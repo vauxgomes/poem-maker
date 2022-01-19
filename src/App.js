@@ -10,19 +10,6 @@ function App() {
     const [name, setName] = useState("");
     const [sex, setSex] = useState("M");
 
-    // Preparing originals
-    originals.forEach((story) => {
-        story.questions.forEach((question) => {
-            if ("onChange" in question) {
-                if (question.onChange === "setName") {
-                    question.onChange = setName;
-                } else if (question.onChange === "setName") {
-                    question.onChange = setName;
-                }
-            }
-        });
-    });
-
     const [stories, setStories] = useState(originals);
     const [story, setStory] = useState(originals[0]);
     const [poem, setPoem] = useState(null);
@@ -39,7 +26,11 @@ function App() {
         question.value = value;
 
         if (question.hasOwnProperty("onChange")) {
-            question.onChange(value);
+            if (question.onChange === "setName") {
+                setName(value);
+            } else if (question.onChange === "setSex") {
+                setSex(value);
+            }
         }
 
         setStories(stories_);

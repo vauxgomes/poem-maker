@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import uuid from "react-uuid";
-
 import Question from "../Question";
 
 import "./styles.css";
 
 export default function Builder({ story, handleChangeAnswer }) {
     const [index, setIndex] = useState(0);
-
+    
     useEffect(() => {
         setIndex(0);
     }, [story]);
@@ -67,7 +65,7 @@ export default function Builder({ story, handleChangeAnswer }) {
             <div className="selector">
                 {story.questions.map((question, idx) => (
                     <span
-                        key={uuid()}
+                        key={question.id}
                         className={`dot ${
                             isQuestionActive(idx) ? "active" : ""
                         } ${question.value ? "success" : ""}`}
