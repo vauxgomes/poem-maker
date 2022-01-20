@@ -11,7 +11,7 @@ export default function Poem({ poem }) {
             <h3>{poem.title}</h3>
 
             {poem.verses.map((verse, index) => (
-                <span className="verse" key={index}>
+                <span className="verse" key={index} contentEditable={true}>
                     {verse}
                 </span>
             ))}

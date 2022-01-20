@@ -6,10 +6,23 @@
     background-color: #fff;
 }
 
-.builder .title {
-    font-weight: bold;
-    font-size: 22px;
+.builder .story-info {
     margin-bottom: 1rem;
+}
+
+.builder .story-title {
+    display: block;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.builder .story-author {
+    color: var(--dark-gray);
+    font-size: 11px;
+}
+
+.builder .story-author::before {
+    content: " — ";
 }
 
 .prev,

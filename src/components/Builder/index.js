@@ -5,7 +5,7 @@ import "./styles.css";
 
 export default function Builder({ story, handleChangeAnswer }) {
     const [index, setIndex] = useState(0);
-    
+
     useEffect(() => {
         setIndex(0);
     }, [story]);
@@ -25,8 +25,11 @@ export default function Builder({ story, handleChangeAnswer }) {
     return (
         <div className="builder">
             {/* HEADER */}
-            <div className="title d-flex align-center justify-content-between">
-                <h2>{story.title}</h2>
+            <div className="story-info d-flex align-center justify-content-between">
+                <div>
+                    <span className="story-title">{story.title}</span>
+                    <small className="story-author">{story.author || 'Autor desconhecido'}</small>
+                </div>
 
                 <div className="d-flex align-center gap-2">
                     <span

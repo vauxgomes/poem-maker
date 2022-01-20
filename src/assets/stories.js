@@ -85,6 +85,8 @@ export const originals = [
     {
         id: "b4c36f3-be5-c7de-7a3b-d84640fe0c",
         title: "Minha história inventada",
+        author: null,
+        creation: null,
         questions: [
             {
                 id: "e1a1f21-0f0e-b8eb-d32-83228af2e8",
@@ -199,6 +201,8 @@ export const originals = [
     {
         id: "01b3237-cc16-c1c5-4a06-ef021362563",
         title: "A vida que não cabe em números",
+        author: null,
+        creation: null,
         questions: [
             {
                 id: "2548eee-8c8a-0612-5db0-8f23fa35e5c",

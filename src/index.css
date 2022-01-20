@@ -1,5 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;500;600;700;800;900&display=swap");
 
+:root {
+    /* Colors */
+    --off-white: #fdfdfd;
+    --gray: #bac0ca;
+    --light-gray: #f3f4fa;
+    --medium-gray: #aeb4b9;
+    --dark-gray: #898a8b;
+    --line-gray: #e7ebee;
+    --primary: #68d388;
+    --primary-light: #c2edda;
+    --secondary: #f4b942;
+
+    /* Measures */
+    --max-width: 1024px;
+    --sidebar-lenth: 5rem;
+    --normal: 16px;
+    --small: 11px;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -28,6 +47,7 @@ label {
 }
 
 select {
+    color: black;
     font-size: 14px;
     padding: 0.25rem;
     border: 1px solid #ccc;
@@ -36,12 +56,14 @@ select {
 }
 
 button {
+    color: black;
     cursor: pointer;
     border: none;
     background-color: transparent;
 }
 
-button:active {
+button:active,
+button:hover {
     color: green;
 }
 
