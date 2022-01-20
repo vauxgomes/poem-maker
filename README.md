@@ -1,4 +1,4 @@
-# Peomador
+# Poemador
 
 ### <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /> 
 
@@ -6,7 +6,7 @@
 - [Publicações](#publicações)
 
 ## Descrição
-Um experimento capaz de criar poesias a partir de caminhos
+Um experimento capaz de criar poesias a partir de formulários
 
 ## Publicações
 _Arte e tecnologia, um caso de uso aplicado de um construtor de poesia em dinâmicas de grupo, 2021, Vaux Gomes._
